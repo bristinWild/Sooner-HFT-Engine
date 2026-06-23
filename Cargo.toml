@@ -1,0 +1,38 @@
+[workspace]
+resolver = "2"
+
+members = ["crates/core", "apps/recorder", "apps/backtester", "apps/trader"]
+
+[workspace.dependencies]
+# Async runtime
+tokio = { version = "1.52", features = ["full"] }
+
+# Decimal arithmetic — NEVER use f64 for prices or balances
+rust_decimal = { version = "1.42", features = ["serde-with-str"] }
+rust_decimal_macros = { version = "1.40" }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0" }
+
+# Structured logging
+tracing = { version = "0.1" }
+tracing-subscriber = { version = "0.3", features = ["env-filter", "json"] }
+
+# Error handling
+thiserror = { version = "2.0" }
+anyhow = { version = "1.0" }
+
+# Config (layered: file → env → overrides)
+figment = { version = "0.10", features = ["toml", "env"] }
+
+# Time — UTC, nanosecond precision
+time = { version = "0.3", features = [
+    "serde",
+    "formatting",
+    "parsing",
+    "macros",
+] }
+
+# Internal
+hft-core = { path = "crates/core" }

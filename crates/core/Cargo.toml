@@ -1,0 +1,12 @@
+[package]
+name = "hft-core"
+version = "0.1.0"
+edition = "2021"
+description = "Domain types shared across the workspace - no IO, no async"
+
+[dependencies]
+rust_decimal = { workspace = true }
+rust_decimal_macros = { workspace = true }
+serde = { workspace = true }
+thiserror = { workspace = true }
+time = { workspace = true }

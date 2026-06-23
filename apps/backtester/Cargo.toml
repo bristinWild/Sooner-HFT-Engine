@@ -1,0 +1,9 @@
+[package]
+name = "backtester"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hft-core = { workspace = true }
+tokio = { workspace = true }
+anyhow = { workspace = true }
