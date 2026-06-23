@@ -1,0 +1,18 @@
+[package]
+name = "exchanges"
+version = "0.1.0"
+edition = "2021"
+description = "Exchange connectors — Bybit WebSocket feed handler"
+
+[dependencies]
+hft-core = { workspace = true }
+tokio = { workspace = true }
+tokio-tungstenite = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tracing = { workspace = true }
+thiserror = { workspace = true }
+time = { workspace = true }
+rust_decimal = { workspace = true }
+rust_decimal_macros = { workspace = true }
+futures-util = { workspace = true }

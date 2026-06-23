@@ -1,7 +1,13 @@
 [workspace]
 resolver = "2"
 
-members = ["crates/core", "apps/recorder", "apps/backtester", "apps/trader"]
+members = [
+    "crates/core",
+    "crates/exchanges",
+    "apps/recorder",
+    "apps/backtester",
+    "apps/trader",
+]
 
 [workspace.dependencies]
 # Async runtime
@@ -36,3 +42,11 @@ time = { version = "0.3", features = [
 
 # Internal
 hft-core = { path = "crates/core" }
+hft-exchanges = { path = "crates/exchanges" }
+
+# WebSocket
+tokio-tungstenite = { version = "0.26", features = ["native-tls"] }
+# HTTP client (for REST snapshots later)
+reqwest = { version = "0.12", features = ["json"] }
+
+futures-util = { version = "0.3" }
